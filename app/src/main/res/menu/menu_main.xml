@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.mightyfrog.android.fabshowhidesample.MainActivity">
+    <item
+        android:title="@string/type"
+        android:icon="@drawable/ic_compare_arrows"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/app_bar_based"
+                android:checkable="true"
+                android:title="@string/app_bar_based"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/recycler_view_based"
+                android:checkable="true"
+                android:checked="true"
+                android:title="@string/recycler_view_based"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>
