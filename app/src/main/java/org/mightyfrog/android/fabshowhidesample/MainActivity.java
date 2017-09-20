@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final RecyclerView rv = (RecyclerView) findViewById(R.id.recyclerView);
+        final RecyclerView rv = findViewById(R.id.recyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(new MyAdapter());
         rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appBar);
+        final AppBarLayout appBarLayout = findViewById(R.id.appBar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
@@ -140,8 +140,8 @@ public class MainActivity extends AppCompatActivity {
         MyViewHolder(View itemView) {
             super(itemView);
 
-            textView1 = (TextView) itemView.findViewById(R.id.textView1);
-            textView2 = (TextView) itemView.findViewById(R.id.textView2);
+            textView1 = itemView.findViewById(R.id.textView1);
+            textView2 = itemView.findViewById(R.id.textView2);
         }
     }
 }
