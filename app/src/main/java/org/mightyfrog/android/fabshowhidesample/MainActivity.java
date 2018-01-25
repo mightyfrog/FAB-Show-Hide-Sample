@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         final RecyclerView rv = findViewById(R.id.recyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(new MyAdapter());
+
+        // remove RecyclerView.OnScrollListener & AppBarLayout.OnOffsetChangedListener to use
+        // ScrollAwareFABBehavior (see also activity_main.xml).
         rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
@@ -105,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private static class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
-        private List<Integer> mList = new ArrayList<>(100);
+        private final List<Integer> mList = new ArrayList<>(100);
 
         MyAdapter() {
             for (int i = 0; i < 100; i++) {
@@ -134,8 +137,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private static class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView textView1;
-        private TextView textView2;
+        private final TextView textView1;
+        private final TextView textView2;
 
         MyViewHolder(View itemView) {
             super(itemView);
