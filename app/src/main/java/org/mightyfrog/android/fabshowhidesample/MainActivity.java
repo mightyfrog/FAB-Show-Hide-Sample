@@ -2,6 +2,7 @@ package org.mightyfrog.android.fabshowhidesample;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         // ScrollAwareFABBehavior (see also activity_main.xml).
         rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 if (mCheckedMenuItem == R.id.recycler_view_based) {
                     return;
                 }
@@ -116,8 +117,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        @NonNull
         @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_holder, parent, false);
 
             return new MyViewHolder(view);
@@ -125,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
         @SuppressLint("SetTextI18n")
         @Override
-        public void onBindViewHolder(MyViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             holder.textView1.setText("1: " + mList.get(position));
             holder.textView2.setText("2: " + mList.get(position));
         }
